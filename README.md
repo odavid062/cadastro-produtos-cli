@@ -13,7 +13,6 @@ Aplicação **CLI** (linha de comando) para gerenciamento de produtos, construí
 
 - Cadastrar produto (ID, nome, preço)
 - Listar todos os produtos
-- Buscar produto por ID
 
 ---
 
@@ -61,6 +60,29 @@ db_produto
 
 ---
 
+## Estrutura do Projeto
+
+```
+cadastro-produtos-cli/
+├── src/
+│   └── main/
+│       ├── java/
+│       │   └── org/
+│       │       └── example/
+│       │           ├── Model/
+│       │           │   └── ProdutoModel.java
+│       │           ├── Repository/
+│       │           │   └── ProdutoRepository.java
+│       │           ├── Service/
+│       │           │   └── ProdutoService.java
+│       │           └── Main.java
+│       └── resources/
+│           └── application.properties
+└── pom.xml
+```
+
+---
+
 ## Como Executar
 
 ### Pré-requisitos
@@ -71,18 +93,18 @@ db_produto
 
 ### Variáveis de Ambiente
 
-| Variável               | Padrão                                  |
-|------------------------|-----------------------------------------|
-| `DB_URL`               | `jdbc:postgresql://localhost:5432/postgres` |
-| `DB_USERNAME`          | `postgres`                              |
-| `DB_PASSWORD`          | `changeme`                              |
+| Variável               | Descrição                                | Padrão                                  |
+|------------------------|------------------------------------------|-----------------------------------------|
+| `DB_URL`               | URL de conexão JDBC com o banco PostgreSQL | `jdbc:postgresql://localhost:5432/postgres` |
+| `DB_USERNAME`          | Usuário de autenticação do PostgreSQL     | `postgres`                              |
+| `DB_PASSWORD`          | Senha do usuário do PostgreSQL           | `changeme`                              |
 
 ### Executar
 
 ```bash
 # Clonar
-git clone https://github.com/odavid062/atvRafael.git
-cd atvRafael
+git clone https://github.com/odavid062/cadastro-produtos-cli.git
+cd cadastro-produtos-cli
 
 # Configurar variáveis (opcional)
 export DB_URL=jdbc:postgresql://localhost:5432/postgres
